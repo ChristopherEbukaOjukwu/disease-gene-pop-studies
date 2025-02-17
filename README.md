@@ -14,4 +14,6 @@ argparse
 2. Get publication count: python publication_count.py genes.csv publication_counts.csv --disease "Disease"
 3. Funding: python fetch_funding_info.py genes.csv funding_results.csv --disease "Disease"
 4. For pharmacogenomics, download CinicalVariants, ClinicalAnnotations, Relationships, and DrugLabels, then run: python pharmacogenomics.py genes.csv results/ pharmgkb_files/clinicalVariants.tsv pharmgkb_files/clinical_annotations.tsv pharmgkb_files/relationships.tsv pharmgkb_files/drugLabels.byGene.tsv
+5. Citation: python citation.py genes.csv citations_results.csv --disease "Disease"
+
 
