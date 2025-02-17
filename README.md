@@ -12,4 +12,4 @@ argparse
 ## Usage
 1. Separate the disease of interest from the GWAS file: python disease_separator.py gwas_catalog_v1.0.tsv filtered_output.tsv --disease "Disease"
 2. Get publication count: python publication_count.py genes.csv publication_counts.csv --disease "Disease"
- 
+3. Funding: python fetch_funding_info.py genes.csv funding_results.csv --disease "Disease"
