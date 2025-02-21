@@ -79,7 +79,7 @@ def main(input_file, output_file, disease):
         gene_europe_pmc_count[gene] = search_europe_pmc_for_gene_disease(gene, disease)
         gene_openalex_count[gene] = search_openalex_for_gene_disease(gene, disease)
 
-        print(f"✅ {gene}: PubMed={gene_pubmed_count[gene]}, EuropePMC={gene_europe_pmc_count[gene]}, OpenAlex={gene_openalex_count[gene]}")
+        print(f"{gene}: PubMed={gene_pubmed_count[gene]}, EuropePMC={gene_europe_pmc_count[gene]}, OpenAlex={gene_openalex_count[gene]}")
 
     # Create and save results
     final_gene_count_df = pd.DataFrame({
@@ -90,7 +90,7 @@ def main(input_file, output_file, disease):
     })
 
     final_gene_count_df.to_csv(output_file, index=False)
-    print(f"\n✅ The results have been saved to {output_file}")
+    print(f"\n The results have been saved to {output_file}")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Fetch publication counts for genes from PubMed, Europe PMC, and OpenAlex.")
