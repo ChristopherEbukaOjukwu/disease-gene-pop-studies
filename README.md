@@ -1,14 +1,22 @@
 # Overview
-This repository houses the scripts used to ascertain how diseases and genes are studied in different populations.
+This repository houses the scripts to ascertain how diseases and genes are studied in different populations.
 
 ## Dependencies
 Ensure you have Python installed, then install the required dependencies: 
 
-pip install argparse
-pip install requests 
-biopython 
-pandas 
-argparse
+- pip install argparse
+- pip install requests 
+- biopython 
+- pandas 
+- argparse
+
+## Data
+1. NHGRI-EBI GWAS Catalog (v1.0) is publicly available at: https://www.ebi.ac.uk/gwas/docs/file-downloads.
+2. OpenAlex API: https://api.openalex.org/works.
+3. EuropePMC: https://europepmc.org/RestfulWebService.
+4. PubMed: https://pubmed.ncbi.nlm.nih.gov.
+5. Pharmacogenomics: https://www.pharmgkb.org/downloads.
+6. Clinical studies: https://clinicaltrials.gov/data-api/api
 
 ## Usage
 1. Separate the disease of interest from the GWAS file: python disease_separator.py gwas_catalog_v1.0.tsv filtered_output.tsv --disease "Disease"
