@@ -3,7 +3,7 @@ import pandas as pd
 import argparse
 from Bio import Entrez
 
-# Set email (required by NCBI Entrez API)
+# Set email 
 Entrez.email = "your_email@example.com"
 
 def search_pubmed_for_gene_disease(gene_name, disease):
@@ -23,9 +23,9 @@ def search_pubmed_for_gene_disease(gene_name, disease):
             all_pubmed_ids.extend(pubmed_ids)
 
             if len(pubmed_ids) < batch_size:
-                break  # Stop when fewer results are returned than batch size
+                break 
 
-            retstart += batch_size  # Move to the next batch
+            retstart += batch_size  
 
         print(f"✅ Found {len(all_pubmed_ids)} articles for {gene_name} ({disease})")
         return all_pubmed_ids
@@ -72,7 +72,7 @@ def main(input_file, output_file, disease):
         for pubmed_id in pubmed_ids:
             funding_info = fetch_pubmed_funding(pubmed_id)
             all_funding_info.append(funding_info)
-            time.sleep(0.5)  # Rate limit to avoid API issues
+            time.sleep(0.5) 
 
         df.at[index, "Funding Information"] = "; ".join(all_funding_info)
 
