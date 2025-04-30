@@ -3,7 +3,7 @@ import pandas as pd
 import argparse
 from Bio import Entrez
 
-# Set email (required by NCBI Entrez API)
+# Set email 
 Entrez.email = "your_email@example.com"
 
 def fetch_pubmed_data(pubmed_id):
@@ -55,8 +55,8 @@ def search_openalex_for_gene_disease(gene_name, disease):
             if response.status_code == 200:
                 data = response.json()
                 total_count += len(data.get("results", []))
-                cursor = data["meta"].get("next_cursor")  # Get next page cursor
-                if not cursor:  # Stop if there's no next page
+                cursor = data["meta"].get("next_cursor")  
+                if not cursor:  
                     break
             else:
                 print(f"Error {response.status_code} for {gene_name}")
