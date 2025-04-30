@@ -5,7 +5,7 @@ import time
 from Bio import Entrez
 from requests.exceptions import RequestException
 
-# Set email for NCBI Entrez API (Required)
+# Set email for NCBI Entrez API
 Entrez.email = "your_email@example.com"
 
 def search_europe_pmc_citations(gene_name, disease):
@@ -24,13 +24,13 @@ def search_europe_pmc_citations(gene_name, disease):
             results = data.get('resultList', {}).get('result', [])
 
             if not results:
-                break  # No more results
+                break 
 
             total_citations += sum(article.get('citedByCount', 0) for article in results)
 
             next_cursor_mark = data.get('nextCursorMark')
             if cursor_mark == next_cursor_mark:
-                break  # No new cursor, exit loop
+                break  
             cursor_mark = next_cursor_mark
         except RequestException as e:
             print(f" Error fetching Europe PMC citations for {gene_name}: {e}")
@@ -60,12 +60,12 @@ def search_openalex_citations(gene_name, disease, max_retries=3, timeout=10):
                 cursor = data.get("meta", {}).get("next_cursor")
                 if not cursor:
                     return total_citations
-                break  # Exit retry loop on success
+                break  
 
             except RequestException as e:
                 retries += 1
                 print(f" Retry {retries}/{max_retries} for {gene_name}: {e}")
-                time.sleep(2)  # Wait before retrying
+                time.sleep(2) 
 
     return total_citations
 
