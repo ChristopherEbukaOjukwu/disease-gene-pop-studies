@@ -3,6 +3,7 @@ This repository houses the scripts used to ascertain how diseases and genes are 
 
 ## Dependencies
 Ensure you have Python installed, then install the required dependencies: 
+
 pip install argparse
 pip install requests 
 biopython 
