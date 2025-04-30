@@ -11,7 +11,9 @@ Ensure you have Python installed, then install the required dependencies:
 - argparse
 
 ## Data
-1. NHGRI-EBI GWAS Catalog (v1.0) is publicly available at: https://www.ebi.ac.uk/gwas/docs/file-downloads.
+The data is publicly available:
+
+1. NHGRI-EBI GWAS Catalog (v1.0): https://www.ebi.ac.uk/gwas/docs/file-downloads.
 2. OpenAlex API: https://api.openalex.org/works.
 3. EuropePMC: https://europepmc.org/RestfulWebService.
 4. PubMed: https://pubmed.ncbi.nlm.nih.gov.
@@ -26,6 +28,3 @@ Ensure you have Python installed, then install the required dependencies:
 5. Citation: python citation.py genes.csv citations_results.csv --disease "Disease"
 6. Country and institution: python countries_institutions.py genes.csv country_institution_results.csv --disease "Disease"
 7. Clinical studies: python fetch_clinical_studies.py genes.csv clinical_study_results.csv --disease "Disease"
-
-
-
