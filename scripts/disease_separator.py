@@ -37,7 +37,7 @@ def filter_gwas_data(input_file, output_file, disease_name):
 
         # Iterate through each row and write only the columns of interest for the specified disease
         for row in reader:
-            if disease_name.lower() in row["DISEASE/TRAIT"].lower():  # Case-insensitive filtering
+            if disease_name.lower() in row["DISEASE/TRAIT"].lower():  
                 writer.writerow({col: row[col] for col in columns_of_interest})
 
 if __name__ == "__main__":
