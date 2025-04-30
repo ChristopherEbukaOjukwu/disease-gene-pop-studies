@@ -2,13 +2,11 @@
 This repository houses the scripts to ascertain how diseases and genes are studied in different populations.
 
 ## Dependencies
-Ensure you have Python installed, then install the required dependencies: 
 
-- pip install argparse
-- pip install requests 
+- argparse
+- requests 
 - biopython 
 - pandas 
-- argparse
 
 ## Data
 The data is publicly available:
