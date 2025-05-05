@@ -54,10 +54,11 @@ python countries_institutions.py genes.csv country_institution_results.csv --dis
 python fetch_clinical_studies.py genes.csv clinical_study_results.csv --disease "Type 2 Diabetes"
 ### 7. **Run pharmacogenomics analysis**
 Download the following PharmGKB files first:
-clinicalVariants.tsv
-clinical_annotations.tsv
-relationships.tsv
-drugLabels.byGene.tsv
+
+clinicalVariants.tsv \
+clinical_annotations.tsv \
+relationships.tsv \
+drugLabels.byGene.tsv \
 python pharmacogenomics.py genes.csv results/ pharmgkb_files/clinicalVariants.tsv \
 pharmgkb_files/clinical_annotations.tsv pharmgkb_files/relationships.tsv \
 pharmgkb_files/drugLabels.byGene.tsv
