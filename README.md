@@ -1,6 +1,4 @@
-# Population Disparities in Genetic Research: Code & Data
-
-This repository contains all code and data used in the study:  
+This repository contains all the code and data used in the study:  
 **"The Global Focus on European-Associated Genes Across Biomedical Research"**  
 Authors: Christopher Ebuka Ojukwu, Daniel Acuna
 
