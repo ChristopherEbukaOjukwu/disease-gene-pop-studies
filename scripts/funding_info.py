@@ -27,10 +27,10 @@ def search_pubmed_for_gene_disease(gene_name, disease):
 
             retstart += batch_size  
 
-        print(f"✅ Found {len(all_pubmed_ids)} articles for {gene_name} ({disease})")
+        print(f"Found {len(all_pubmed_ids)} articles for {gene_name} ({disease})")
         return all_pubmed_ids
     except Exception as e:
-        print(f"❌ Error searching PubMed for {gene_name}: {e}")
+        print(f"Error searching PubMed for {gene_name}: {e}")
         return []
 
 def fetch_pubmed_funding(pubmed_id):
@@ -47,7 +47,7 @@ def fetch_pubmed_funding(pubmed_id):
 
         return "; ".join(funding_info) if funding_info else "No funding info"
     except Exception as e:
-        print(f"❌ Error fetching funding for PubMed ID {pubmed_id}: {e}")
+        print(f"Error fetching funding for PubMed ID {pubmed_id}: {e}")
         return "Error"
 
 def main(input_file, output_file, disease):
@@ -60,7 +60,7 @@ def main(input_file, output_file, disease):
 
     for index, row in df.iterrows():
         gene_name = row["Gene"]
-        print(f"\n🚀 Processing gene: {gene_name}")
+        print(f"\n Processing gene: {gene_name}")
 
         # Search PubMed
         pubmed_ids = search_pubmed_for_gene_disease(gene_name, disease)
@@ -76,11 +76,11 @@ def main(input_file, output_file, disease):
 
         df.at[index, "Funding Information"] = "; ".join(all_funding_info)
 
-        print(f"✅ Finished processing {gene_name}: {len(pubmed_ids)} articles found.")
+        print(f" Finished processing {gene_name}: {len(pubmed_ids)} articles found.")
 
     # Save results
     df.to_csv(output_file, index=False)
-    print(f"\n🎯 Results saved to {output_file}")
+    print(f"\n Results saved to {output_file}")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Fetch PubMed IDs and funding information for genes.")
